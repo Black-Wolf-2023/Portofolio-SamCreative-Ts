@@ -1,0 +1,91 @@
+@use "./constant" as *;
+
+.hero {
+  height: calc(90vh - 78px);
+}
+.social {
+  .img {
+    width: 400px;
+  }
+  .social_links {
+    span {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: $light-color-2 !important;
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+.type {
+  position: relative;
+}
+.type::after {
+  content: "";
+  width: 2px;
+  height: 90%;
+  position: absolute;
+  background-color: $main-color;
+  animation: opacity 0.4s ease forwards infinite;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.buttons {
+  :nth-child(1) {
+    &:hover {
+      background-color: transparent !important;
+      border: 2px solid $main-color;
+      color: $main-color !important;
+    }
+  }
+  :nth-child(2) {
+    &:hover {
+      background-color: $main-color !important;
+      border: none;
+    }
+  }
+}
+@include media(sm) {
+  .social {
+    .img {
+      width: 100%;
+      padding-left: 40px;
+    }
+  }
+}
+@include media(xl) {
+  .hero {
+    padding-top: 90px;
+  }
+  .social {
+    .img {
+      width: 290px;
+      padding-top: 50px;
+    }
+  }
+}
+@include media(md) {
+  .hero {
+    height: calc(50vh - 78px);
+    padding-top: 0px;
+  }
+  .social {
+    .img {
+      width: 400px;
+    }
+    .social_links {
+      justify-content: flex-start !important;
+    }
+  }
+}

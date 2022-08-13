@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+//======== Variables Start ==========>
+$main-color: #7456ff;
+$main-color-dark: #1a133a;
+$main-color-dark_2: #0d0a1e;
+$primary-color: #8368ff;
+$light-color-1: #a693ff;
+$light-color-2: #c5b9ff;
+$light-color-3: #e0daff;
+$white-color-1: #ffffff;
+$white-color-2: #f5f2ff;
+$dark-color: #0c0c0c;
+$light-dark-color-1: #0f0f0f;
+$light-dark-color-2: #323131;
+$light-gray-color-1: #707070;
+$light-gray-color-2: #999999;
+$por-1: #f8975f;
+$por-2: #34c9b6;
+$por-3: rgb(28, 153, 147);
+$linear-1: linear-gradient(to left, #7456ff, #8368ff);
+$linear-2: linear-gradient(to left, #0f0f0f, #060021);
+$font-fam: "Poppins", sans-serif;
+$colors: (
+  "main-color": $main-color,
+  "main-color-dark": $main-color-dark,
+  "main-color-dark_2": $main-color-dark_2,
+  "primary-color": $primary-color,
+  "light-color-1": $light-color-1,
+  "light-color-2": $light-color-2,
+  "light-color-3": $light-color-3,
+  "white-color-1": $white-color-1,
+  "white-color-2": $white-color-2,
+  "light-dark-color-1": $light-dark-color-1,
+  "light-dark-color-2": $light-dark-color-2,
+  "light-gray-color-1": $light-gray-color-1,
+  "light-gray-color-2": $light-gray-color-2,
+  "linear-1": $linear-1,
+  "por-1": $por-1,
+  "por-2": $por-2,
+  "por-3": $por-3,
+);
+//======== Variables End ==========>
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color !important;
+    background-image: $color !important;
+  }
+  .text-#{$name} {
+    color: $color !important;
+  }
+  .bg-outline-#{$name} {
+    border: 2px solid $color;
+  }
+}
+
+@mixin media($size) {
+  @if $size == lg {
+    @media screen and (min-width: 1067px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media screen and (min-width: 676px) and (max-width: 1066px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media screen and (min-width: 377px) and (max-width: 675px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: 200px) and (max-width: 376px) {
+      @content;
+    }
+  }
+}

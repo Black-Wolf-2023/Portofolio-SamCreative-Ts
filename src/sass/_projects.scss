@@ -1,0 +1,26 @@
+@use "./constant" as *;
+.projects {
+  overflow-x: hidden;
+  .container {
+    .row {
+      .cont {
+        .buttons {
+          width: 400px;
+          :nth-child(1) {
+            &:hover {
+              background-color: $main-color !important;
+              border: 0;
+              color: $white-color-1 !important;
+            }
+          }
+          :nth-child(2) {
+            &:hover {
+              background-color: transparent !important;
+              border: 2px solid $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

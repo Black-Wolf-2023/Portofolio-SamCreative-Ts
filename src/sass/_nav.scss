@@ -1,0 +1,94 @@
+@use "./constant" as *;
+
+nav {
+  .container-fluid {
+    .collapse {
+      ul {
+        li {
+          a {
+            font-weight: 550;
+            &:hover {
+              color: $main-color !important;
+            }
+          }
+        }
+        :last-child {
+          a {
+            &:hover {
+              background-color: $main-color;
+              color: $white-color-1 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+nav {
+  .container-fluid {
+    .show {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $main-color-dark_2;
+      animation: hider_scaler 1s ease-in-out;
+      ul {
+        li {
+          width: 95%;
+          margin: 0 auto;
+          a {
+            color: $main-color !important;
+            background-color: transparent;
+            border: 2px solid $main-color;
+            padding: 10px 0;
+            margin: 10px 0;
+            animation: hider_scaler 1s ease-in-out;
+            animation-delay: 0.1s;
+            text-align: center;
+            &:hover {
+              background-color: $main-color;
+              color: $white-color-1 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.active-nav {
+  background-color: $main-color-dark_2 !important;
+  position: fixed;
+  top: -20%;
+  z-index: 1000;
+  width: 100%;
+  padding: 0 30px;
+  animation: nav 0.5s ease-in-out forwards;
+}
+@keyframes nav {
+  from {
+    top: -20%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@keyframes hider_scaler {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.nav_shower {
+  cursor: pointer;
+}
+@include media(lg) {
+  .nav_shower {
+    display: none;
+  }
+}
