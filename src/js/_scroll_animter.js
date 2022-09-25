@@ -19,7 +19,6 @@ class Observe {
             threshold: [this.start, this.end],
         });
         observe.observe(this.ele);
-        console.log(this.ele);
     }
 }
 let offer = document.querySelector('.offer');
