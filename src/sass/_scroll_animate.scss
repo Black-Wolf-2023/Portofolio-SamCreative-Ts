@@ -1,0 +1,123 @@
+.offer-animate {
+  .row {
+    .head {
+      transform: scale(1);
+      transition-delay: 0.1s;
+      opacity: 1;
+      .scroller {
+        .rounded-3 {
+          transform: translateX(0px) scale(0.8);
+          opacity: 1;
+        }
+        @for $var from 1 through 3 {
+          :nth-child(#{$var}) {
+            transition-delay: calc(#{$var * 3}s / 10);
+          }
+        }
+        .active-img {
+          transform: translateX(0px) scale(1) !important;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.details-animate {
+  $status: "true";
+  .row {
+    @if $status == "true" {
+      @for $var from 1 through 4 {
+        :nth-child(#{$var}) {
+          transition-delay: calc(#{$var * 3}s / 10);
+        }
+      }
+    }
+    .det {
+      transform: translateX(0) scale(1);
+      .handel {
+        transition-delay: 0ms;
+      }
+    }
+  }
+}
+.projects-animate {
+  .container {
+    .row {
+      @for $var from 1 through 4 {
+        :nth-child(#{$var}) {
+          transition-delay: calc(#{$var * 3}s / 10);
+        }
+      }
+      .cont {
+        transform: scale(1);
+        button {
+          transition-delay: 0ms;
+        }
+      }
+    }
+  }
+}
+.icons-details-animate {
+  .container {
+    .row {
+      @for $var from 1 through 4 {
+        :nth-child(#{$var}) {
+          transition-delay: calc(#{$var * 3}s / 10);
+        }
+      }
+      .parent {
+        pointer-events: all;
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      .cir {
+        .roud {
+          transition-delay: 0ms;
+        }
+      }
+    }
+  }
+}
+.tools-animate {
+  .container {
+    .row {
+      @for $var from 1 through 5 {
+        :nth-child(#{$var}) {
+          transition-delay: calc(#{$var * 3}s / 10);
+        }
+      }
+      .pep {
+        transform: translateY(0);
+        opacity: 1;
+        img {
+          transition-delay: 0ms;
+        }
+      }
+    }
+  }
+}
+.footer-animate {
+  .container {
+    p {
+      transform: scale(1);
+      transition-delay: 0.1s;
+      opacity: 1;
+    }
+    h2 {
+      transform: scale(1);
+      transition-delay: 0.2s;
+      opacity: 1;
+    }
+    .contact {
+      @for $var from 1 through 4 {
+        :nth-child(#{$var}) {
+          transition-delay: calc(#{$var * 3}s / 10);
+        }
+      }
+      .content {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

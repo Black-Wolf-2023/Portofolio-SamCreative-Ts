@@ -6,6 +6,11 @@
       background-image: url("../../assets/logo/text_2.png");
     }
     .row {
+      .parent {
+        transform: translateY(900px) scale(0);
+        opacity: 0;
+        pointer-events: none;
+      }
       .cir {
         width: 200px;
         height: 200px;

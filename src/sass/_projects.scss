@@ -4,6 +4,7 @@
   .container {
     .row {
       .cont {
+        transform: scale(0);
         .buttons {
           width: 400px;
           :nth-child(1) {

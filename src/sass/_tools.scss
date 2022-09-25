@@ -1,11 +1,14 @@
 @use "./constant" as *;
 
 .tools {
+  overflow: hidden;
   .container {
     .row {
       .img {
+        transform: translateY(900px);
+        opacity: 0;
         width: 200px;
-        &:hover {
+        img:hover {
           transform: scale(1.1);
           cursor: pointer;
         }
